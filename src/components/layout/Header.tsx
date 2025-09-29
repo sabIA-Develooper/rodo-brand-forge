@@ -57,13 +57,14 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex h-14 sm:h-16 items-center justify-between">
           {/* Logo - Responsivo */}
-          <Link to="/" className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0">
-            <div className="h-8 w-8 sm:h-10 sm:w-10 rounded bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm sm:text-base">R</span>
-            </div>
-            <div className="font-display font-bold text-lg sm:text-xl text-primary">
-              RODOTEC
-            </div>
+          <Link to="/" className="flex items-center flex-shrink-0">
+            <img
+              src="./logo-rodotec-full.jpg"
+              alt="RODOTEC Equipamentos Rodoviários"
+              className="h-8 sm:h-9 md:h-10 w-auto object-contain"
+              loading="eager"
+              decoding="sync"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -129,13 +130,14 @@ export function Header() {
                 <div className="flex flex-col h-full">
                   {/* Mobile Header */}
                   <div className="flex items-center justify-between p-6 border-b">
-                    <div className="flex items-center space-x-3">
-                      <div className="h-8 w-8 rounded bg-primary flex items-center justify-center">
-                        <span className="text-primary-foreground font-bold">R</span>
-                      </div>
-                      <div className="font-display font-bold text-xl text-primary">
-                        RODOTEC
-                      </div>
+                    <div className="flex items-center">
+                      <img
+                        src="./logo-rodotec-full.jpg"
+                        alt="RODOTEC Equipamentos Rodoviários"
+                        className="h-8 w-auto object-contain"
+                        loading="eager"
+                        decoding="sync"
+                      />
                     </div>
                     <button
                       aria-label="Fechar menu"

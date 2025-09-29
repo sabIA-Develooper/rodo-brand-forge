@@ -63,11 +63,6 @@ export function ServicesSection() {
             
             return (
               <div key={index} className="premium-card group hover:shadow-hover mobile-padding">
-                {/* Icon */}
-                <div className="flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-xl mb-3 sm:mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-                  <Icon className="h-6 w-6 sm:h-8 sm:w-8 text-primary group-hover:text-primary-foreground" />
-                </div>
-
                 {/* Content */}
                 <h3 className="font-display font-bold text-base sm:text-xl text-foreground mb-2 sm:mb-4">
                   {service.title}
@@ -81,7 +76,6 @@ export function ServicesSection() {
                 <ul className="space-y-1.5 sm:space-y-2 mb-5 sm:mb-8">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center text-xs sm:text-sm text-muted-foreground">
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2.5 sm:mr-3 flex-shrink-0" />
                       {feature}
                     </li>
                   ))}

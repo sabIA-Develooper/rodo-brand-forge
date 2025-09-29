@@ -114,7 +114,6 @@ export default function ProductDetail() {
                 <div className="space-y-2 sm:space-y-3">
                   {product.bullets.map((bullet, index) => (
                     <div key={index} className="flex items-start">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0" />
                       <span className="text-sm sm:text-base text-muted-foreground">{bullet}</span>
                     </div>
                   ))}
