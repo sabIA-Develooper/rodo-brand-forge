@@ -35,13 +35,14 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-8">
           {/* Company Info */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <div className="flex items-center space-x-3 mb-3 sm:mb-6">
-              <div className="h-8 w-8 sm:h-10 sm:w-10 rounded bg-primary-foreground flex items-center justify-center">
-                <span className="text-primary font-bold text-base sm:text-lg">R</span>
-              </div>
-              <div className="font-display font-bold text-xl sm:text-2xl">
-                RODOTEC
-              </div>
+            <div className="mb-3 sm:mb-6">
+              <img
+                src="./logo-rodotec-full.jpg"
+                alt="RODOTEC Equipamentos Rodoviários"
+                className="h-8 w-auto sm:h-10 object-contain"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <p className="text-primary-foreground/80 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
               Há mais de 25 anos fabricando equipamentos rodoviários de qualidade superior, 
@@ -57,7 +58,9 @@ export function Footer() {
                 <Facebook className="h-4 w-4 sm:h-5 sm:w-5" />
               </a>
               <a 
-                href="#" 
+                href="https://www.instagram.com/rodotecse/?hl=pt" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="touch-target w-10 h-10 sm:w-11 sm:h-11 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
               >
                 <Instagram className="h-4 w-4 sm:h-5 sm:w-5" />

@@ -138,7 +138,6 @@ export function ProductMegaMenu({ isOpen, onClose }: ProductMegaMenuProps) {
                     <div className="space-y-1">
                       {product.bullets.slice(0, 2).map((bullet, index) => (
                         <div key={index} className="flex items-center text-xs text-muted-foreground">
-                          <div className="w-1 h-1 bg-primary rounded-full mr-2 flex-shrink-0" />
                           {bullet}
                         </div>
                       ))}

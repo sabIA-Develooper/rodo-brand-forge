@@ -15,14 +15,25 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <div className="product-card group">
       {/* Product Image */}
-      <div className="aspect-[4/3] bg-muted rounded-lg mb-3 sm:mb-4 overflow-hidden">
+      <div className="aspect-[3/2] bg-muted rounded-lg mb-3 sm:mb-4 overflow-hidden relative">
         <img
           src={product.thumb}
           alt={product.name}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 will-change-transform"
           loading="lazy"
+          decoding="async"
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
+        {/* RODOTEC Logo Overlay */}
+        <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-sm rounded-lg p-2 shadow-lg">
+          <img
+            src="./logo-rodotec-full.jpg"
+            alt="RODOTEC"
+            className="h-6 w-auto object-contain"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
       </div>
 
       {/* Product Info */}
@@ -39,7 +50,13 @@ export function ProductCard({ product }: ProductCardProps) {
         <div className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-6 flex-1">
           {product.bullets.slice(0, 3).map((bullet, index) => (
             <div key={index} className="flex items-start text-[13px] sm:text-sm text-muted-foreground">
-              <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2.5 sm:mr-3 flex-shrink-0" />
+              <img
+                src="./logo-rodotec-full.jpg"
+                alt="RODOTEC"
+                className="w-4 h-3 object-contain mt-1 mr-2.5 sm:mr-3 flex-shrink-0"
+                loading="lazy"
+                decoding="async"
+              />
               <span>{bullet}</span>
             </div>
           ))}

@@ -75,11 +75,6 @@ export function ProductCategories() {
             
             return (
               <div key={category.id} className="category-card group bg-gradient-to-br from-card to-card/80 border border-border/50 rounded-xl p-5 sm:p-6 hover:shadow-xl hover:border-primary/20 transition-all duration-300 backdrop-blur-sm">
-                {/* Icon */}
-                <div className="flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl mb-3 sm:mb-6 group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-300 shadow-sm">
-                  <Icon className="h-6 w-6 sm:h-8 sm:w-8 text-primary drop-shadow-sm" />
-                </div>
-
                 {/* Content */}
                 <h3 className="font-display font-bold text-base sm:text-xl text-foreground mb-2 sm:mb-4 group-hover:text-primary transition-colors">
                   {category.name}
@@ -93,7 +88,6 @@ export function ProductCategories() {
                 <ul className="space-y-1.5 sm:space-y-2 mb-5 sm:mb-8">
                   {category.features.map((feature, index) => (
                     <li key={index} className="flex items-center text-xs sm:text-sm text-muted-foreground">
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2.5 sm:mr-3 flex-shrink-0 shadow-sm" />
                       {feature}
                     </li>
                   ))}

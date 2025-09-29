@@ -45,9 +45,6 @@ export function InstitutionalSection() {
                 
                 return (
                   <div key={index} className="flex space-x-3 sm:space-x-4 group">
-                    <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
-                    </div>
                     <div>
                       <h3 className="font-display font-bold text-base sm:text-xl text-foreground mb-1.5 sm:mb-2">
                         {value.title}
@@ -110,8 +107,20 @@ export function InstitutionalSection() {
             </div>
 
             {/* Decorative Elements */}
-            <div className="absolute -top-4 -right-4 w-20 h-20 sm:w-24 sm:h-24 bg-primary/10 rounded-full blur-xl" />
-            <div className="absolute -bottom-4 -left-4 w-24 h-24 sm:w-32 sm:h-32 bg-accent/10 rounded-full blur-xl" />
+            <img
+              src="./logo-rodotec-full.jpg"
+              alt="RODOTEC"
+              className="absolute -top-4 -right-4 w-20 h-16 sm:w-24 sm:h-20 object-contain opacity-20 blur-sm"
+              loading="lazy"
+              decoding="async"
+            />
+            <img
+              src="./logo-rodotec-full.jpg"
+              alt="RODOTEC"
+              className="absolute -bottom-4 -left-4 w-24 h-20 sm:w-32 sm:h-26 object-contain opacity-15 blur-sm"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
       </div>

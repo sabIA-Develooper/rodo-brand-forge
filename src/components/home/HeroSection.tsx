@@ -11,11 +11,15 @@ export function HeroSection() {
         <img
           src={heroImage}
           alt="Caminhão RODOTEC na estrada ao pôr do sol"
-          className="w-full h-full object-cover object-center sm:object-right-center"
+          className="w-full h-full object-cover object-[75%_center] sm:object-[85%_center] md:object-right-center"
           loading="eager"
           sizes="100vw"
+          style={{
+            imageRendering: '-webkit-optimize-contrast',
+            filter: 'contrast(1.05) saturate(1.1)',
+          }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/40 sm:from-black/70 sm:via-black/40 sm:to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/30 sm:from-black/65 sm:via-black/35 sm:to-black/15" />
       </div>
 
       {/* Content */}
@@ -23,7 +27,13 @@ export function HeroSection() {
         <div className="max-w-4xl">
           {/* Badge */}
           <div className="inline-flex items-center space-x-2 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full px-3 py-2 sm:px-4 mb-3 sm:mb-6">
-            <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+            <img
+              src="./logo-rodotec-full.jpg"
+              alt="RODOTEC"
+              className="w-4 h-3 object-contain animate-pulse"
+              loading="lazy"
+              decoding="async"
+            />
             <span className="text-primary-foreground font-medium text-[11px] sm:text-sm">
               Equipamentos Rodoviários de Alta Qualidade
             </span>
@@ -63,12 +73,6 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll Indicator - Oculto em mobile muito pequeno */}
-      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden sm:block">
-        <div className="w-6 h-10 border-2 border-primary-foreground/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary-foreground/50 rounded-full mt-2 animate-pulse" />
-        </div>
-      </div>
     </section>
   );
 }
