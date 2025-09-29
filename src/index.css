@@ -27,7 +27,8 @@ All colors MUST be HSL.
     --secondary-foreground: 0 0% 100%;
 
     --muted: 220 13% 91%;
-    --muted-foreground: 215 16% 47%;
+    /* Aumenta contraste do texto secundário para melhor leitura */
+    --muted-foreground: 215 16% 35%;
 
     --accent: 230 58% 35%;
     --accent-foreground: 0 0% 100%;
@@ -35,8 +36,9 @@ All colors MUST be HSL.
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
+    /* Bordas um pouco mais escuras para contraste AA */
+    --border: 220 13% 86%;
+    --input: 220 13% 86%;
     --ring: 230 58% 29%;
 
     /* RODOTEC Premium Design Tokens */
@@ -86,7 +88,7 @@ All colors MUST be HSL.
     --secondary-foreground: 0 0% 98%;
 
     --muted: 230 22% 18%;
-    --muted-foreground: 220 13% 65%;
+    --muted-foreground: 220 13% 75%;
 
     --accent: 230 58% 35%;
     --accent-foreground: 0 0% 98%;
@@ -119,7 +121,7 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-sans text-[15px];
   }
 
   /* RODOTEC Premium Components */
@@ -169,18 +171,52 @@ All colors MUST be HSL.
 
 @layer components {
   .btn-hero {
-    @apply bg-primary hover:bg-secondary text-primary-foreground font-semibold px-8 py-4 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105;
+    @apply bg-primary hover:bg-secondary text-primary-foreground font-semibold px-6 py-3 sm:px-8 sm:py-4 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 min-h-[44px] touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary;
   }
 
   .btn-outline-hero {
-    @apply border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-semibold px-8 py-4 rounded-lg transition-all duration-300;
+    @apply border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-semibold px-6 py-3 sm:px-8 sm:py-4 rounded-lg transition-all duration-300 min-h-[44px] touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary-foreground;
   }
 
   .category-card {
-    @apply premium-card p-6 cursor-pointer hover:bg-accent/5;
+    @apply premium-card p-4 sm:p-6 cursor-pointer hover:bg-accent/5 min-h-[44px] touch-manipulation;
   }
 
   .product-card {
-    @apply premium-card p-6 flex flex-col h-full;
+    @apply premium-card p-4 sm:p-6 flex flex-col h-full touch-manipulation;
+  }
+
+  /* Mobile-first responsive utilities */
+  .mobile-text-sm {
+    @apply text-sm sm:text-base;
+  }
+
+  .mobile-text-base {
+    @apply text-base sm:text-lg;
+  }
+
+  .mobile-text-lg {
+    @apply text-lg sm:text-xl;
+  }
+
+  .mobile-text-xl {
+    @apply text-xl sm:text-2xl;
+  }
+
+  .mobile-padding {
+    @apply p-4 sm:p-6;
+  }
+
+  .mobile-margin {
+    @apply m-4 sm:m-6;
+  }
+
+  /* Touch-friendly interactive elements */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px] touch-manipulation;
+  }
+
+  .touch-button {
+    @apply touch-target px-4 py-3 sm:px-6 sm:py-4 rounded-lg transition-all duration-300;
   }
 }

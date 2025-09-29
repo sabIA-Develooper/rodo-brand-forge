@@ -125,6 +125,8 @@ export function ProductMegaMenu({ isOpen, onClose }: ProductMegaMenuProps) {
                         src={product.thumb}
                         alt={product.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
                     </div>
                     <h4 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">

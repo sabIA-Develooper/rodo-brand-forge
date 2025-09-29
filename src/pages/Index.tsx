@@ -8,9 +8,12 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <HeroSection />
-      <ProductCategories />
-      <InstitutionalSection />
-      <ServicesSection />
+      {/* Seções com espaçamento otimizado para mobile */}
+      <div className="space-y-12 sm:space-y-16">
+        <ProductCategories />
+        <InstitutionalSection />
+        <ServicesSection />
+      </div>
       <ContactCTA />
     </div>
   );
