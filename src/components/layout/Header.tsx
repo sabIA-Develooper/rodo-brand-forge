@@ -3,6 +3,7 @@ import { Menu, Search, Phone, Mail, MapPin, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { ProductMegaMenu } from '@/components/navigation/ProductMegaMenu';
 
 const navigation = [
   { name: 'Produtos', href: '/produtos' },
@@ -16,6 +17,7 @@ const navigation = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [productMenuOpen, setProductMenuOpen] = useState(false);
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
@@ -29,11 +31,15 @@ export function Header() {
             <div className="flex items-center space-x-6 text-muted-foreground">
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
-                <span>(79) 3218-3000</span>
+                <a href="tel:+5579321830000" className="hover:text-primary transition-colors">
+                  (79) 3218-3000
+                </a>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4" />
-                <span>comercial@rodotec.com.br</span>
+                <a href="mailto:comercial@rodotec.com.br" className="hover:text-primary transition-colors">
+                  comercial@rodotec.com.br
+                </a>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4" />
@@ -62,19 +68,37 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`font-medium transition-colors hover:text-primary ${
-                  isActive(item.href)
-                    ? 'text-primary border-b-2 border-primary'
-                    : 'text-muted-foreground'
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navigation.map((item) => {
+              if (item.name === 'Produtos') {
+                return (
+                  <button
+                    key={item.name}
+                    onClick={() => setProductMenuOpen(true)}
+                    className={`font-medium transition-colors hover:text-primary ${
+                      location.pathname.startsWith('/produtos')
+                        ? 'text-primary border-b-2 border-primary'
+                        : 'text-muted-foreground'
+                    }`}
+                  >
+                    {item.name}
+                  </button>
+                );
+              }
+              
+              return (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={`font-medium transition-colors hover:text-primary ${
+                    isActive(item.href)
+                      ? 'text-primary border-b-2 border-primary'
+                      : 'text-muted-foreground'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Desktop CTA */}
@@ -129,11 +153,15 @@ export function Header() {
                 <div className="border-t pt-4 space-y-3 text-sm text-muted-foreground">
                   <div className="flex items-center space-x-2">
                     <Phone className="h-4 w-4" />
-                    <span>(79) 3218-3000</span>
+                    <a href="tel:+5579321830000" className="hover:text-primary transition-colors">
+                      (79) 3218-3000
+                    </a>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Mail className="h-4 w-4" />
-                    <span>comercial@rodotec.com.br</span>
+                    <a href="mailto:comercial@rodotec.com.br" className="hover:text-primary transition-colors">
+                      comercial@rodotec.com.br
+                    </a>
                   </div>
                 </div>
               </div>
@@ -141,6 +169,12 @@ export function Header() {
           </Sheet>
         </div>
       </div>
+
+      {/* Product Mega Menu */}
+      <ProductMegaMenu
+        isOpen={productMenuOpen}
+        onClose={() => setProductMenuOpen(false)}
+      />
     </header>
   );
 }

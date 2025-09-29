@@ -19,11 +19,11 @@ All colors MUST be HSL.
     --popover-foreground: 210 21% 10%;
 
     /* RODOTEC Primary - #1F2A74 converted to HSL */
-    --primary: 230 58% 29%;
+    --primary: 228 60% 29%;
     --primary-foreground: 0 0% 100%;
 
     /* RODOTEC Secondary - lighter blue for hover states */
-    --secondary: 230 58% 45%;
+    --secondary: 228 60% 45%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 220 13% 91%;
@@ -146,6 +146,14 @@ All colors MUST be HSL.
 
   .sidebar-catalog {
     @apply fixed left-0 top-20 h-[calc(100vh-5rem)] w-72 bg-card border-r border-border overflow-y-auto;
+  }
+
+  /* Line clamp utility */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   @media (max-width: 768px) {

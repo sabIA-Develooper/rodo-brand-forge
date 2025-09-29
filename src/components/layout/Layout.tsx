@@ -21,33 +21,8 @@ export function Layout({ children }: LayoutProps) {
       <Header />
       
       <div className="flex flex-1 relative">
-        {/* Sidebar Catalog - only on product pages */}
-        {isProductPage && (
-          <>
-            {/* Desktop Sidebar */}
-            <SidebarCatalog 
-              className="hidden md:block"
-            />
-            
-            {/* Mobile Catalog Toggle */}
-            <Button
-              onClick={() => setSidebarOpen(true)}
-              className="fixed top-24 left-4 z-40 md:hidden btn-hero p-3"
-            >
-              <Menu className="h-4 w-4" />
-            </Button>
-            
-            {/* Mobile Sidebar */}
-            <SidebarCatalog 
-              isOpen={sidebarOpen}
-              onClose={() => setSidebarOpen(false)}
-              className="md:hidden"
-            />
-          </>
-        )}
-        
         {/* Main Content */}
-        <main className={`flex-1 ${isProductPage ? 'md:ml-72' : ''}`}>
+        <main className="flex-1">
           {children}
         </main>
       </div>
