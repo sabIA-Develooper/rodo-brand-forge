@@ -30,12 +30,12 @@ export default function Produtos() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="hero-section py-16 text-center text-primary-foreground">
+      <section className="hero-section py-12 sm:py-16 text-center text-primary-foreground">
         <div className="container mx-auto px-4">
-          <h1 className="font-display font-bold text-4xl md:text-5xl mb-4">
+          <h1 className="font-display font-bold text-[clamp(28px,6vw,40px)] md:text-5xl mb-3 sm:mb-4">
             {pageTitle}
           </h1>
-          <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-xl text-primary-foreground/90 mb-6 sm:mb-8 max-w-2xl mx-auto">
             {pageDescription}
           </p>
           
@@ -46,14 +46,14 @@ export default function Produtos() {
               placeholder="Buscar produtos..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10 bg-background/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60"
+              className="pl-10 bg-background/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60 h-11 text-[15px]"
             />
           </div>
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-12">
-        <div className="flex gap-8">
+      <div className="container mx-auto px-4 py-10 sm:py-12">
+        <div className="flex gap-6 sm:gap-8">
           {/* Desktop Sidebar */}
           <div className="hidden lg:block">
             <SidebarCatalog />
@@ -82,7 +82,7 @@ export default function Produtos() {
             {filteredProducts.length > 0 ? (
               <>
                 <div className="mb-8">
-                  <h2 className="font-display font-bold text-2xl text-foreground mb-2">
+                  <h2 className="font-display font-bold text-xl sm:text-2xl text-foreground mb-2">
                     {filteredProducts.length} produto{filteredProducts.length !== 1 ? 's' : ''} encontrado{filteredProducts.length !== 1 ? 's' : ''}
                   </h2>
                   {searchTerm && (
@@ -92,7 +92,7 @@ export default function Produtos() {
                   )}
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-8">
                   {filteredProducts.map((product) => (
                     <ProductCard key={product.id} product={product} />
                   ))}
